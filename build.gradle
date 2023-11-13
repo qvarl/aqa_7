@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'com.codeborne:selenide:6.19.0',
+            "org.junit.jupiter:junit-jupiter:5.8.2",
+            "org.slf4j:slf4j-simple:2.0.9",
+            "org.assertj:assertj-core:3.24.1",
+            "com.codeborne:pdf-test:1.5.0",
+            "com.codeborne:xls-test:1.4.3",
+            "com.opencsv:opencsv:5.7.1"
+    )
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
